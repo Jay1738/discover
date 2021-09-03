@@ -1,6 +1,7 @@
 import {ReactComponent as Top} from './svg/topBG.svg';
 import titleImage from './svg/titleimage.png';
 import author from './svg/author.jpg';
+import authpic from './svg/authPic.jpg';
 import './App.css';
 import styled from 'styled-components';
 import AnimatedButton from './components/button'
@@ -83,12 +84,13 @@ const Italic = styled.span`
 `
 
 const CategoryContainer = styled.div`
-  height:500px;
+  height:450px;
   width:100%;
   background-color:#EDECEC;
   position:relative;
   display:flex;
   flex-direction:row;
+  flex-wrap:wrap;
 `
 
 const TitleContainer = styled.div`
@@ -113,6 +115,7 @@ const Title = styled.h1`
 
 const AuthorContainer = styled.div`
   margin-top:5%;
+  margin-left:10%;
   height:350px;
   width:350px;
   border-radius:50%;
@@ -138,6 +141,7 @@ const ArticleContainer = styled.div`
   display:flex;
   flex-direction:row;
 `
+
 
 function App() {
   return (
