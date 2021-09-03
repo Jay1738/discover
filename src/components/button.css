@@ -1,0 +1,11 @@
+
+
+button.shake{
+    animation: shake 1s forwards;
+}
+@keyframes shake {
+  0%  { background-size: 0%; }
+  100%  { background-size: 100%;
+      color:white;
+  }
+}

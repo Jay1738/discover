@@ -1,6 +1,9 @@
-import {ReactComponent as Top} from './svg/topBG.svg'
+import {ReactComponent as Top} from './svg/topBG.svg';
+import titleImage from './svg/titleimage.png';
+import author from './svg/author.jpg';
 import './App.css';
 import styled from 'styled-components';
+import AnimatedButton from './components/button'
 
 const AppContainer = styled.div`
   display:flex;
@@ -33,7 +36,7 @@ const TopContainer = styled.div`
   overflow: hidden;
 `
 
-const Title = styled.h1`
+const Company = styled.h1`
   color:white;
   font-size:100px;
   margin-top:3%;
@@ -80,24 +83,68 @@ const Italic = styled.span`
 `
 
 const CategoryContainer = styled.div`
-  height:450px;
+  height:500px;
   width:100%;
   background-color:#EDECEC;
   position:relative;
   display:flex;
   flex-direction:row;
-  justify-content:center;
-  text-align:center;
-  align-items:center;
 `
 
+const TitleContainer = styled.div`
+  display:flex;
+  flex-direction:row;
+  text-align:center;
+`
+
+const TitlePic = styled.img`
+  height:400px;
+  width:400px;
+`
+
+const Title = styled.h1`
+  font-size:70px;
+  position:absolute;
+  margin-left:2%;
+  margin-top:1%;
+  color:white;
+
+`
+
+const AuthorContainer = styled.div`
+  margin-top:5%;
+  height:350px;
+  width:350px;
+  border-radius:50%;
+  overflow:hidden;
+`
+
+const Author = styled.img`
+  height:350px;
+  width:250px;
+`
+
+const ArticleDescriptionContainer = styled.div`
+  margin-top:5%;
+  height:350px;
+  width:500px;
+  display:flex;
+  flex-direction:column;
+  margin-left:-2%;
+`
+
+const ArticleContainer = styled.div`
+  width:850px;
+  display:flex;
+  flex-direction:row;
+`
 
 function App() {
   return (
     <AppContainer>
       <TopContainer>
         <Top />
-        <StyledOutlineBox><Title>Discover<br></br><Slogan>A new way to learn</Slogan></Title></StyledOutlineBox>
+        <StyledOutlineBox><Company>Discover<br></br><Slogan>A new way to learn</Slogan></Company></StyledOutlineBox>
       </TopContainer>
       <SiteDiscriptionContainer>
         <ResearchContainer>
@@ -109,7 +156,17 @@ function App() {
         </ AboutUsContainer>
 
       </SiteDiscriptionContainer>
-      <CategoryContainer></CategoryContainer>
+      <CategoryContainer>
+        <TitleContainer><TitlePic src={titleImage} alt='hourglass'/> <Title>History</Title> </TitleContainer>
+        <ArticleContainer>
+          <AuthorContainer>
+            <Author src={author} alt='author'></Author>
+          </AuthorContainer>
+          <ArticleDescriptionContainer><h1>Dr.Jennifer Houston</h1><h2>Origins of Democracy</h2><p>Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.</p>
+            <AnimatedButton />
+          </ArticleDescriptionContainer>
+        </ArticleContainer>
+      </CategoryContainer>
     </AppContainer>
   );
 }
