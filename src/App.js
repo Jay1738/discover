@@ -3,6 +3,7 @@ import titleImage from './svg/titleimage.png';
 import './App.css';
 import styled from 'styled-components';
 import CarouselComponent from './components/Carousel';
+import Articles from './components/Article';
 
 const AppContainer = styled.div`
   display:flex;
