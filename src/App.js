@@ -1,10 +1,8 @@
 import {ReactComponent as Top} from './svg/topBG.svg';
 import titleImage from './svg/titleimage.png';
-import author from './svg/author.jpg';
-import authpic from './svg/authPic.jpg';
 import './App.css';
 import styled from 'styled-components';
-import AnimatedButton from './components/button'
+import CarouselComponent from './components/Carousel';
 
 const AppContainer = styled.div`
   display:flex;
@@ -90,7 +88,7 @@ const CategoryContainer = styled.div`
   position:relative;
   display:flex;
   flex-direction:row;
-  flex-wrap:wrap;
+  flex-wrap:no-wrap;
 `
 
 const TitleContainer = styled.div`
@@ -113,34 +111,6 @@ const Title = styled.h1`
 
 `
 
-const AuthorContainer = styled.div`
-  margin-top:5%;
-  margin-left:10%;
-  height:350px;
-  width:350px;
-  border-radius:50%;
-  overflow:hidden;
-`
-
-const Author = styled.img`
-  height:350px;
-  width:250px;
-`
-
-const ArticleDescriptionContainer = styled.div`
-  margin-top:5%;
-  height:350px;
-  width:500px;
-  display:flex;
-  flex-direction:column;
-  margin-left:-2%;
-`
-
-const ArticleContainer = styled.div`
-  width:850px;
-  display:flex;
-  flex-direction:row;
-`
 
 
 function App() {
@@ -162,14 +132,7 @@ function App() {
       </SiteDiscriptionContainer>
       <CategoryContainer>
         <TitleContainer><TitlePic src={titleImage} alt='hourglass'/> <Title>History</Title> </TitleContainer>
-        <ArticleContainer>
-          <AuthorContainer>
-            <Author src={author} alt='author'></Author>
-          </AuthorContainer>
-          <ArticleDescriptionContainer><h1>Dr.Jennifer Houston</h1><h2>Origins of Democracy</h2><p>Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.</p>
-            <AnimatedButton />
-          </ArticleDescriptionContainer>
-        </ArticleContainer>
+            <CarouselComponent></CarouselComponent>
       </CategoryContainer>
     </AppContainer>
   );
