@@ -12,17 +12,31 @@ const CategoryContainer = styled.div`
   display:flex;
   flex-direction:row;
   flex-wrap:no-wrap;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `
 
 const TitleContainer = styled.div`
   display:flex;
   flex-direction:row;
   text-align:center;
+  @media (max-width: 700px) {
+    height:150px;
+  }
 `
 
 const TitlePic = styled.img`
   height:400px;
   width:400px;
+  @media (max-width: 1100px) {
+    height:200px;
+    width:200px;
+  }
+  @media (max-width: 700px) {
+    height:200px;
+    width:200px;
+  }
 `
 
 const Title = styled.h1`
@@ -31,7 +45,12 @@ const Title = styled.h1`
   margin-left:2%;
   margin-top:1%;
   color:white;
-
+  @media (max-width: 1200px) {
+    font-size:45px;
+  }
+  @media (max-width: 700px) {
+    font-size:40px;
+  }
 `
 
 export default class Category extends Component {
@@ -62,7 +81,7 @@ export default class Category extends Component {
     render() {
   return (
     <CategoryContainer style={{backgroundColor: this.state.backgroundColor}}>
-      <TitleContainer><TitlePic src={this.state.source} alt='hourglass'/> <Title>{this.props.Title}</Title> </TitleContainer>
+      <TitleContainer><TitlePic src={this.state.source} alt='color image'/> <Title>{this.props.Title}</Title> </TitleContainer>
           <CarouselComponent data={this.props.Title}></CarouselComponent>
     </CategoryContainer>
   )

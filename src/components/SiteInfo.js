@@ -10,6 +10,9 @@ const SiteDiscriptionContainer = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
+  @media (max-width: 700px) {
+    display:none;
+  }
 `;
 
 const SiteDiscription = styled.h2`

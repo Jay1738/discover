@@ -6,6 +6,7 @@ const AppContainer = styled.div`
   display:flex;
   flex-direction:column;
 `
+//Categories add here to bottom of page with color scheme as TitleImage, Type of Category as Title and background color as bgColor
 
 function App() {
   return (

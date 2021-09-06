@@ -26,17 +26,28 @@ const StyledOutlineBox = styled.div`
   width:100%;
   text-align:center;
   line-height: 500%;
+  @media (max-width: 700px) {
+    max-height:50px;
+    max-width: 200px;
+  }
 `
 
 const Company = styled.h1`
   color:white;
   font-size:100px;
   margin-top:3%;
+  @media (max-width: 700px) {
+    font-size:20px;
+    margin-top:-10%;
+  }
 `
 
 const Slogan = styled.span`
   color:white;
   font-size:70px;
+  @media (max-width: 700px) {
+    display:none;
+  }
 `
 
 export default function Banner() {
