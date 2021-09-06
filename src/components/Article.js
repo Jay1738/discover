@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AnimatedButton from './button';
 import author from '../svg/author.jpg';
+import authPic from '../svg/authPic.jpg';
 
 const AuthorContainer = styled.div`
   margin-top:5%;
@@ -34,9 +35,69 @@ const ArticleContainer = styled.div`
   flex-direction:row;
 `
 
-export default function Articles() {
+export default function Articles(array) {
 
-  const ArticleData = [
+  const ArticleDataHistory = [
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: author,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: author,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: author,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: author,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+  ]
+
+  const ArticleDataArt = [
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: authPic,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: authPic,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: authPic,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+
+    {
+        AuthorName: 'Dr.Jennifer Houston',
+        ArticleTitle: 'Origins of Democracy',
+        Source: authPic,
+        Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
+    },
+  ]
+
+  const ArticleDataScience = [
     {
         AuthorName: 'Dr.Jennifer Houston',
         ArticleTitle: 'Origins of Democracy',
@@ -66,7 +127,7 @@ export default function Articles() {
     },
   ]
   return (
-    ArticleData.map( ({AuthorName, ArticleTitle, Source, Description}) => {
+    array.map( ({AuthorName, ArticleTitle, Source, Description}) => {
 
     return (
       <ArticleContainer>
