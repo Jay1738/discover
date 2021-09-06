@@ -17,7 +17,7 @@ const Button = styled.button`
   font-size:18px;
   box-shadow: 0 0px 0px 0px rgb(255, 2, 112), 0 1px 3px 0px rgb(255, 2, 112);
   margin-top:3%;
-`
+` 
 
 const AnimatedButton = () => {
 

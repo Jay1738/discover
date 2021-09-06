@@ -15,7 +15,7 @@ const StyledOutlineBox = styled.div`
   border-width: 5px;
   border-color: white;
   position: absolute;
-  margin-left: auto;
+  margin-left: auto; 
   margin-right: auto;
   right:0;
   left:0;

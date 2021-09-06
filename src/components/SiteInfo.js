@@ -25,7 +25,7 @@ const AboutUsContainer = styled.div`
   text-align: left;
   padding-left: 30px;
   border-left: solid;
-`;
+`; 
 
 const ResearchContainer = styled.div`
   padding-right: 30px;
