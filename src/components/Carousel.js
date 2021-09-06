@@ -20,7 +20,6 @@ const ArticleDataHistory = [
       Source: author,
       Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
   },
-
   {
       AuthorName: 'Dr.Jennifer Houston',
       ArticleTitle: 'Origins of Democracy',
