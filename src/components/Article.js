@@ -13,7 +13,7 @@ const AuthorContainer = styled.div`
   @media (max-width: 1100px) {
     height:250px;
     width:250px;
-    font-size:20px; 
+    font-size:20px;
     margin-top:10%;
   }
   @media (max-width: 700px) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import axios from 'axios';
 import Articles from './Article';
 import './carousel.css';
 import author from '../svg/author.jpg';
@@ -20,7 +21,6 @@ const ArticleDataHistory = [
       Source: author,
       Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
   },
- 
   {
       AuthorName: 'Dr.Jennifer Houston',
       ArticleTitle: 'Origins of Democracy',
@@ -103,10 +103,18 @@ export default class CarouselComponent extends Component {
 
     this.state = {
       type: [],
+<<<<<<< HEAD
+
+=======
+      data: null
+>>>>>>> e1aea91227d635b92501c1e2e3ede5cba2447e6e
     }
   }
 
   componentDidMount() {
+    this.callBackendAPI()
+      .then(res => this.setState({ data: res.express }))
+      .catch(err => console.log(err));
     if(this.props.data === 'History') {
       this.setState({type: ArticleDataHistory});
     } else if(this.props.data === 'Art') {
@@ -114,7 +122,30 @@ export default class CarouselComponent extends Component {
     } else {
       this.setState({type: ArticleDataScience});
     }
+    axios.get('http://localhost:1337/restaurants').then(response => {
+      console.log(response);
+    });
   }
+
+  callBackendAPI = async () => {
+  const response = await fetch('/express_backend');
+  const body = await response.json();
+
+  if (response.status !== 200) {
+    throw Error(body.message)
+  }
+  return body;
+};
+
+  callBackendAPI = async () => {
+  const response = await fetch('/express_backend');
+  const body = await response.json();
+
+  if (response.status !== 200) {
+    throw Error(body.message)
+  }
+  return body;
+};
 
     render() {
         return (

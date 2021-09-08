@@ -24,7 +24,10 @@ const TitleContainer = styled.div`
   @media (max-width: 700px) {
     height:150px;
   }
-` 
+
+`
+
+
 
 const TitlePic = styled.img`
   height:400px;
