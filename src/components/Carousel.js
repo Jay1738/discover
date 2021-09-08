@@ -4,97 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import axios from 'axios';
 import Articles from './Article';
 import './carousel.css';
-import author from '../svg/author.jpg';
-import authPic from '../svg/authPic.jpg';
 
-const ArticleDataHistory = [
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-]
-
-const ArticleDataArt = [
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: authPic,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: authPic,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: authPic,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: authPic,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-]
-
-const ArticleDataScience = [
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-
-  {
-      AuthorName: 'Dr.Jennifer Houston',
-      ArticleTitle: 'Origins of Democracy',
-      Source: author,
-      Description: 'Dr.Houston is an expert in Ancient Greece having earned a Masters in Ancient History from Yale. In her newest article she determines the most likely conditions that where required to form the makings of early democracy in Anthens.'
-  },
-]
 
 export default class CarouselComponent extends Component {
 
@@ -103,38 +13,43 @@ export default class CarouselComponent extends Component {
 
     this.state = {
       type: [],
+
+      ArticleDataScience: [],
+      ArticleDataArt: [],
+      ArticleDataHistory: [],
+
     }
   }
 
-  componentDidMount() {
+
+  componentDidMount = async ()  => {
     if(this.props.data === 'History') {
-      this.setState({type: ArticleDataHistory});
+      try {
+        const response = await axios.get('http://localhost:1337/Histories');
+        this.setState({ ArticleDataHistory: response.data });
+      } catch (error) {
+        console.log(error);
+      }
+      this.setState({type: this.state.ArticleDataHistory});
     } else if(this.props.data === 'Art') {
-      this.setState({type: ArticleDataArt});
+      try {
+        const response = await axios.get('http://localhost:1337/Arts');
+        this.setState({ ArticleDataArt: response.data });
+      } catch (error) {
+        console.log(error);
+      }
+      this.setState({type: this.state.ArticleDataArt});
     } else {
-      this.setState({type: ArticleDataScience});
+      try {
+        const response = await axios.get('http://localhost:1337/Sciences');
+        this.setState({ ArticleDataScience: response.data });
+      } catch (error) {
+        console.log(error);
+      }
+      this.setState({type: this.state.ArticleDataScience});
     }
   }
 
-  callBackendAPI = async () => {
-  const response = await fetch('/express_backend');
-  const body = await response.json();
-
-  if (response.status !== 200) {
-    throw Error(body.message)
-  }
-  return body;
-};
-
-  callBackendAPI = async () => {
-  const response = await fetch('/express_backend');
-  const body = await response.json();
-
-  if (response.status !== 200) {
-    throw Error(body.message)
-  }
-  return body;
-};
 
     render() {
         return (
