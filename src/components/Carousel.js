@@ -103,18 +103,10 @@ export default class CarouselComponent extends Component {
 
     this.state = {
       type: [],
-<<<<<<< HEAD
-
-=======
-      data: null
->>>>>>> e1aea91227d635b92501c1e2e3ede5cba2447e6e
     }
   }
 
   componentDidMount() {
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
-      .catch(err => console.log(err));
     if(this.props.data === 'History') {
       this.setState({type: ArticleDataHistory});
     } else if(this.props.data === 'Art') {
@@ -122,9 +114,6 @@ export default class CarouselComponent extends Component {
     } else {
       this.setState({type: ArticleDataScience});
     }
-    axios.get('http://localhost:1337/restaurants').then(response => {
-      console.log(response);
-    });
   }
 
   callBackendAPI = async () => {
