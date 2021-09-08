@@ -24,6 +24,7 @@ const Button = styled.button`
   }
 `
 
+
 const AnimatedButton = () => {
 
     const [shake, setShake] = useState(false);

@@ -98,7 +98,10 @@ const ArtDesc = styled.p`
     font-size:10px;
   }
 `
+
 const APIname = 'http://localhost:1337';
+
+
 
 export default function Articles(array) {
 
@@ -109,6 +112,7 @@ export default function Articles(array) {
       <ArticleContainer>
         <AuthorContainer>
           <Author src={APIname + Source.url} alt='author'></Author>
+
         </AuthorContainer>
         <ArticleDescriptionContainer><AuthTitle>{AuthorName}</AuthTitle><ArtTitle>{ArticleTitle}</ArtTitle><ArtDesc>{Description}</ArtDesc>
           <AnimatedButton />

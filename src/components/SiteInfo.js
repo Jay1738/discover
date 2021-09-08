@@ -27,6 +27,7 @@ const AboutUsContainer = styled.div`
   border-left: solid;
 `;
 
+
 const ResearchContainer = styled.div`
   padding-right: 30px;
 `;

@@ -6,7 +6,6 @@ import Articles from './Article';
 import './carousel.css';
 
 
-
 export default class CarouselComponent extends Component {
 
   constructor(props) {
@@ -14,6 +13,7 @@ export default class CarouselComponent extends Component {
 
     this.state = {
       type: [],
+
       ArticleDataScience: [],
       ArticleDataArt: [],
       ArticleDataHistory: [],
@@ -49,6 +49,7 @@ export default class CarouselComponent extends Component {
       this.setState({type: this.state.ArticleDataScience});
     }
   }
+
 
     render() {
         return (
