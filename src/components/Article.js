@@ -98,17 +98,17 @@ const ArtDesc = styled.p`
     font-size:10px;
   }
 `
+const APIname = 'http://localhost:1337';
 
 export default function Articles(array) {
 
 
   return (
     array.map( ({AuthorName, ArticleTitle, Source, Description}) => {
-
     return (
       <ArticleContainer>
         <AuthorContainer>
-          <Author src={Source} alt='author'></Author>
+          <Author src={APIname + Source.url} alt='author'></Author>
         </AuthorContainer>
         <ArticleDescriptionContainer><AuthTitle>{AuthorName}</AuthTitle><ArtTitle>{ArticleTitle}</ArtTitle><ArtDesc>{Description}</ArtDesc>
           <AnimatedButton />
